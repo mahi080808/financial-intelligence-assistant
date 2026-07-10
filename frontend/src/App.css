@@ -1,0 +1,36 @@
+body{
+    background:#f4f7fb;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.container-box{
+    max-width:900px;
+    margin:40px auto;
+}
+
+.card{
+    border:none;
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.answer-box{
+    min-height:180px;
+    background:#fafafa;
+    border-radius:12px;
+    padding:20px;
+    border:1px solid #ddd;
+    white-space:pre-wrap;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:30px;
+    font-weight:bold;
+}
+
+.status{
+    color:green;
+    margin-top:15px;
+    font-weight:bold;
+}
