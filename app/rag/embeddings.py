@@ -1,27 +1,24 @@
 import os
-from pathlib import Path
 from dotenv import load_dotenv
 from openai import OpenAI
 
-# Load .env from the project root
-env_path = Path(__file__).resolve().parents[2] / ".env"
-load_dotenv(dotenv_path=env_path)
-
-client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY")
-)
+load_dotenv()
 
 
 def create_embeddings(chunks):
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
     response = client.embeddings.create(
         model="text-embedding-3-small",
         input=chunks
     )
 
-    embeddings = [item.embedding for item in response.data]
+    return [item.embedding for item in response.data]
 
-    return embeddings
+
 def create_query_embedding(query):
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
     response = client.embeddings.create(
         model="text-embedding-3-small",
         input=query
